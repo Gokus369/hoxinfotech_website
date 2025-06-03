@@ -1,0 +1,13 @@
+<!-- mission.svg: Target & Arrow Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Outer circle -->
+  <circle cx="32" cy="32" r="30" fill="#E0F7FA" stroke="#00ACC1" stroke-width="4" />
+  <!-- Middle circle -->
+  <circle cx="32" cy="32" r="20" fill="#B2EBF2" stroke="#0097A7" stroke-width="4" />
+  <!-- Inner circle (bullseye) -->
+  <circle cx="32" cy="32" r="10" fill="#00ACC1" />
+  <!-- Arrow shaft -->
+  <line x1="10" y1="54" x2="42" y2="22" stroke="#006064" stroke-width="4" stroke-linecap="round" />
+  <!-- Arrow head -->
+  <polygon points="46,18 56,28 46,38" fill="#006064" />
+</svg>
