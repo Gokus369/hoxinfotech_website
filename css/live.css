@@ -1,24 +1,9 @@
-/*=========================================================================== 
-   Live Classes Section & CSS (Responsive Enhancements)
-=============================================================================*/
-
-/* Section wrapper */
-.live-classes {
-  margin: 3rem 0;
-}
-
-/* Section heading */
-.live-classes .section-heading {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--color-text);
-}
-
 /* Grid container for live class cards */
 .live-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
+  /* reduced gap for tighter grid */
   justify-content: space-between;
 }
 
@@ -30,28 +15,30 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  /* Default: four cards per row on large screens */
-  width: calc(25% - 1.5rem);
-  min-width: 250px;
-  max-width: 320px;
+  /* Smaller boxes */
+  width: calc(20% - 1rem);
+  /* 5 cards per row on large screens */
+  min-width: 200px;
+  max-width: 240px;
 }
 
-/* Image container (40% of card height) */
+/* Image container (35% of card height) */
 .live-image {
-  flex: 0 0 40%;
+  flex: 0 0 35%;
   overflow: hidden;
 }
 
 .live-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-/* Info area (60% of card) */
+/* Info area (65% of card) */
 .live-info {
   flex: 1;
-  padding: 1rem;
+  padding: 0.8rem;
+  /* slightly reduced padding */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -59,25 +46,27 @@
 }
 
 .live-info h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  /* slightly smaller text */
   color: var(--color-text);
 }
 
 .live-info .live-date {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--color-text-light);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .live-button {
   background-color: var(--color-primary);
   color: var(--color-button-text);
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 0.8rem;
   border: none;
   border-radius: 6px;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   align-self: flex-start;
+  font-size: 0.9rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
@@ -96,22 +85,29 @@
    Responsive Breakpoints
 =============================================================================*/
 
-/* Small laptops (≤1280px): three cards per row */
+/* Small laptops (≤1280px): four cards per row */
 @media (max-width: 1280px) {
+  .live-card {
+    width: calc(25% - 1rem);
+  }
+}
+
+/* Tablets (≤1024px): three cards per row */
+@media (max-width: 1024px) {
   .live-card {
     width: calc(33.333% - 1rem);
   }
 }
 
-/* Tablets & small laptops (≤1024px): two cards per row */
-@media (max-width: 1024px) {
+/* Phones & small tablets (≤768px): two cards per row */
+@media (max-width: 768px) {
   .live-card {
     width: calc(50% - 1rem);
   }
 }
 
-/* Phones & small tablets (≤768px): one card per row */
-@media (max-width: 768px) {
+/* Very small devices (≤480px): one card per row */
+@media (max-width: 480px) {
   .live-card {
     width: 100%;
     max-width: none;

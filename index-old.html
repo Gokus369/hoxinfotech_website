@@ -1,378 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hox Infotech - Home</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        font-family: "Open Sans", sans-serif;
-        background-color: #eaf6ff;
-        background-image: radial-gradient(
-            circle at top left,
-            #a3d1ff,
-            transparent 60%
-          ),
-          radial-gradient(circle at top right, #a3d1ff, transparent 60%),
-          linear-gradient(to bottom, #a3d1ff, #e6f3ff);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: #111;
-      }
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: transparent;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      }
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-      }
-      .logo {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-      .logo .highlight {
-        color: green;
-      }
-      .menu-toggle {
-        display: none;
-        cursor: pointer;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background: #333;
-        border-radius: 2px;
-      }
-      /* Updated navbar spacing and item styles */
-      nav {
-        display: flex;
-        gap: 2rem;
-      }
-      nav a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-      }
-      nav a:hover,
-      nav a.active {
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-      }
-      .cta-button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 0.75rem 1.25rem;
-        border: none;
-        border-radius: 8px;
-        font-family: "Poppins", sans-serif;
-        cursor: pointer;
-      }
-      .scrolled {
-        background-color: #fff !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: background 0.3s ease, box-shadow 0.3s ease;
-      }
-      .body-container,
-      .hero {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        width: 100%;
-      }
-      .hero {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .hero-text {
-        flex: 1;
-        min-width: 280px;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hox Infotech - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Open Sans", sans-s #a3d1ff, erif;
+      background-color: #eaf6ff;
+      background-image: radial-gradient(circle at top left,
+          #a3d1ff,
+          transparent 60%),
+        radial-gradient(circle at top right, #a3d1ff, transparent 60%),
+        linear-gradient(to bottom, #a3d1ff, #e6f3ff);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #111;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: transparent;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo .highlight {
+      color: green;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+    }
+
+    /* Updated navbar spacing and item styles */
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .cta-button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+    }
+
+    .scrolled {
+      background-color: #fff !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .body-container,
+    .hero {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .hero-text p {
+      margin: 1rem 0;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .offwhite-panel {
+      background-color: #fbfcfd;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 2rem 1rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+
+    .offwhite-panel .section {
+      margin: 0 0 2rem;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .offwhite-panel .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .courses-grid,
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card,
+    .testimonial {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 6px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    footer {
+      background: #f5f5f5;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+    }
+
+    footer h4 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    @media (max-width: 1024px) {
       .hero-text h1 {
-        font-size: 2.5rem;
-        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
       }
-      .hero-text p {
-        margin: 1rem 0;
+
+      nav a {
+        padding: 0.5rem 0.75rem;
       }
-      .hero-image {
-        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .cta-button {
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .hero {
+        flex-direction: column;
         text-align: center;
       }
-      .hero-image img {
-        max-width: 100%;
-        height: auto;
-      }
-      .offwhite-panel {
-        background-color: #fbfcfd;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        padding: 2rem 1rem;
-        margin: 2rem auto;
-        max-width: 1200px;
-      }
-      .offwhite-panel .section {
-        margin: 0 0 2rem;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-      }
-      .offwhite-panel .section:last-child {
-        margin-bottom: 0;
-      }
+
       .courses-grid,
       .why-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1rem;
+        grid-template-columns: 1fr;
       }
-      .card,
-      .testimonial {
-        background: #fff;
-        border-radius: 12px;
-        padding: 1rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-      .card h3 {
-        margin-top: 0;
-        font-family: "Poppins", sans-serif;
-      }
-      .card button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 0.75rem 1.25rem;
-        border: none;
-        border-radius: 6px;
-        margin-top: 1rem;
-        cursor: pointer;
-      }
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 2rem;
-        padding: 1rem;
-      }
-      footer {
-        background: #f5f5f5;
-        border-top: 1px solid #ddd;
-        font-size: 0.9rem;
-      }
-      footer h4 {
-        font-family: "Poppins", sans-serif;
-      }
-      @media (max-width: 1024px) {
-        .hero-text h1 {
-          font-size: 2rem;
-        }
-        nav a {
-          padding: 0.5rem 0.75rem;
-        }
-      }
-      @media (max-width: 768px) {
-        .nav-container {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .menu-toggle {
-          display: flex;
-        }
-        nav {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          margin-top: 1rem;
-        }
-        nav.open {
-          display: flex;
-        }
-        .cta-button {
-          width: 100%;
-          margin-top: 1rem;
-        }
-        .hero {
-          flex-direction: column;
-          text-align: center;
-        }
-        .courses-grid,
-        .why-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-text h1 {
-          font-size: 1.75rem;
-        }
-        .hero-text p {
-          font-size: 0.95rem;
-        }
-        .offwhite-panel {
-          padding: 1rem;
-          margin: 1rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="nav-container">
-        <div class="logo"><span class="highlight">H</span>ox Infotech</div>
-        <div class="menu-toggle" id="menuToggle">
-          <span></span><span></span><span></span>
-        </div>
-        <nav id="navbar">
-          <a href="#">Home</a>
-          <a href="#">Courses</a>
-          <a href="#">Live Sessions</a>
-          <a href="#">Projects</a>
-          <a href="#">Services</a>
-          <a href="#">About</a>
-        </nav>
-        <button class="cta-button">Join Now</button>
-      </div>
-    </header>
-    <script>
-      window.addEventListener("scroll", () => {
-        const h = document.querySelector("header");
-        h.classList.toggle("scrolled", window.scrollY > 50);
-      });
-      document.getElementById("menuToggle").addEventListener("click", () => {
-        document.getElementById("navbar").classList.toggle("open");
-      });
-    </script>
 
-    <div class="body-container">
-      <section class="hero">
-        <div class="hero-text">
-          <h1>Master Tech Skills with Real Projects</h1>
-          <p>Learn from top trainers. 100% placement assistance.</p>
-          <button class="cta-button">Start Learning Now</button>
-        </div>
-        <div class="hero-image">
-          <!-- Replace placeholder with local asset -->
-          <img src="assets/image-2.png" alt="Illustration" />
+      .hero-text h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-text p {
+        font-size: 0.95rem;
+      }
+
+      .offwhite-panel {
+        padding: 1rem;
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo"><span class="highlight">H</span>ox Infotech</div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </div>
+      <nav id="navbar">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Live Sessions</a>
+        <a href="#">Projects</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+      </nav>
+      <button class="cta-button">Join Now</button>
+    </div>
+  </header>
+  <script>
+    window.addEventListener("scroll", () => {
+      const h = document.querySelector("header");
+      h.classList.toggle("scrolled", window.scrollY > 50);
+    });
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      document.getElementById("navbar").classList.toggle("open");
+    });
+  </script>
+
+  <div class="body-container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Master Tech Skills with Real Projects</h1>
+        <p>Learn from top trainers. 100% placement assistance.</p>
+        <button class="cta-button">Start Learning Now</button>
+      </div>
+      <div class="hero-image">
+        <!-- Replace placeholder with local asset -->
+        <img src="assets/image-2.png" alt="Illustration" />
+      </div>
+    </section>
+
+    <div class="offwhite-panel">
+      <section class="section">
+        <h2>Explore Our Courses</h2>
+        <div class="courses-grid">
+          <div class="card">
+            <h3>Flutter</h3>
+            <p>Build beautiful cross-platform apps</p>
+            <small>300 enrollments</small>
+            <button>Enroll</button>
+          </div>
+          <div class="card">
+            <h3>MERN Stack</h3>
+            <p>Full stack web development</p>
+            <small>450 enrollments</small>
+            <button>Enroll</button>
+          </div>
+          <div class="card">
+            <h3>Python</h3>
+            <p>Data science and scripting</p>
+            <small>300 enrollments</small>
+            <button>Enroll</button>
+          </div>
+          <div class="card">
+            <h3>AWS Certification</h3>
+            <p>Master cloud computing</p>
+            <button>Enroll</button>
+          </div>
         </div>
       </section>
 
-      <div class="offwhite-panel">
-        <section class="section">
-          <h2>Explore Our Courses</h2>
-          <div class="courses-grid">
-            <div class="card">
-              <h3>Flutter</h3>
-              <p>Build beautiful cross-platform apps</p>
-              <small>300 enrollments</small>
-              <button>Enroll</button>
-            </div>
-            <div class="card">
-              <h3>MERN Stack</h3>
-              <p>Full stack web development</p>
-              <small>450 enrollments</small>
-              <button>Enroll</button>
-            </div>
-            <div class="card">
-              <h3>Python</h3>
-              <p>Data science and scripting</p>
-              <small>300 enrollments</small>
-              <button>Enroll</button>
-            </div>
-            <div class="card">
-              <h3>AWS Certification</h3>
-              <p>Master cloud computing</p>
-              <button>Enroll</button>
-            </div>
+      <section class="section">
+        <h2>Live, Interactive Classes</h2>
+        <div class="courses-grid">
+          <div class="card">
+            <p><strong>April 25, 2024</strong></p>
+            <p>11:00 AM – 12:00 PM</p>
+            <p><a href="#">DevOps Workshop</a></p>
           </div>
-        </section>
+          <div class="card">
+            <p><strong>April 26, 2024</strong></p>
+            <p>11:00 AM – 12:00 PM</p>
+            <p><a href="#">Web Design Basics</a></p>
+            <p>2:00 PM – 6:00 PM</p>
+            <p><a href="#">Python Essentials</a></p>
+          </div>
+        </div>
+      </section>
 
-        <section class="section">
-          <h2>Live, Interactive Classes</h2>
-          <div class="courses-grid">
-            <div class="card">
-              <p><strong>April 25, 2024</strong></p>
-              <p>11:00 AM – 12:00 PM</p>
-              <p><a href="#">DevOps Workshop</a></p>
-            </div>
-            <div class="card">
-              <p><strong>April 26, 2024</strong></p>
-              <p>11:00 AM – 12:00 PM</p>
-              <p><a href="#">Web Design Basics</a></p>
-              <p>2:00 PM – 6:00 PM</p>
-              <p><a href="#">Python Essentials</a></p>
-            </div>
-          </div>
-        </section>
+      <section class="section">
+        <h2>Why Choose Us</h2>
+        <div class="why-grid">
+          <div class="card"><strong>Expert Trainers</strong></div>
+          <div class="card"><strong>Hands-on Projects</strong></div>
+          <div class="card"><strong>Career Support</strong></div>
+        </div>
+      </section>
 
-        <section class="section">
-          <h2>Why Choose Us</h2>
-          <div class="why-grid">
-            <div class="card"><strong>Expert Trainers</strong></div>
-            <div class="card"><strong>Hands-on Projects</strong></div>
-            <div class="card"><strong>Career Support</strong></div>
+      <section class="section">
+        <h2>Testimonials</h2>
+        <div class="courses-grid">
+          <div class="testimonial">
+            <p><strong>Sarah M.</strong><br />Marketing Specialist</p>
+            <p>The projects helped me land my dream job!</p>
           </div>
-        </section>
+          <div class="testimonial">
+            <p><strong>John D.</strong><br />Software Engineer</p>
+            <p>Incredible learning experience with real-world projects.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 
-        <section class="section">
-          <h2>Testimonials</h2>
-          <div class="courses-grid">
-            <div class="testimonial">
-              <p><strong>Sarah M.</strong><br />Marketing Specialist</p>
-              <p>The projects helped me land my dream job!</p>
-            </div>
-            <div class="testimonial">
-              <p><strong>John D.</strong><br />Software Engineer</p>
-              <p>Incredible learning experience with real-world projects.</p>
-            </div>
-          </div>
-        </section>
+  <!-- Original Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4>Company</h4>
+        <p>About Us</p>
+        <p>Services</p>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <p>Flutter</p>
+        <p>MERN Stack</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>info@hoxinfotech.com</p>
+        <p>+1 234 567 890</p>
+      </div>
+      <div>
+        <h4>Social Media</h4>
+        <p>Twitter | Facebook | LinkedIn</p>
       </div>
     </div>
+  </footer>
+</body>
 
-    <!-- Original Footer -->
-    <footer>
-      <div class="footer-container">
-        <div>
-          <h4>Company</h4>
-          <p>About Us</p>
-          <p>Services</p>
-        </div>
-        <div>
-          <h4>Courses</h4>
-          <p>Flutter</p>
-          <p>MERN Stack</p>
-        </div>
-        <div>
-          <h4>Contact Us</h4>
-          <p>info@hoxinfotech.com</p>
-          <p>+1 234 567 890</p>
-        </div>
-        <div>
-          <h4>Social Media</h4>
-          <p>Twitter | Facebook | LinkedIn</p>
-        </div>
-      </div>
-    </footer>
-  </body>
 </html>

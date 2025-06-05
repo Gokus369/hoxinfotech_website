@@ -1,234 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hox Infotech</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/courses.css" />
-    <link rel="stylesheet" href="css/live.css" />
-  </head>
-  <body>
-    <div class="body-wrapper">
-      <header>
-        <div class="nav-container">
-          <div class="logo"><span class="highlight">H</span>ox Infotech</div>
 
-          <!-- Hamburger button -->
-          <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hox Infotech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/courses.css" />
+  <link rel="stylesheet" href="css/live.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/service .css" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
 
-          <nav id="navbar">
-            <a href="#home">Home</a>
-            <a href="#courses">Courses</a>
-            <a href="#live">Live Sessions</a>
-            <a href="#projects">Projects</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-          </nav>
+<body>
+  <div class="body-wrapper">
+    <header>
+      <div class="nav-container">
+        <div class="logo"><span class="highlight">H</span>ox Infotech</div>
 
-          <button class="cta-button">Join Now</button>
+        <!-- Hamburger button -->
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="navbar">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#live">Live Sessions</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <button class="cta-button">Join Now</button>
+      </div>
+    </header>
+    <div class="body-container">
+      <section id="home" class="hero">
+        <div class="hero-text">
+          <h1 class="first-heading">Master Tech Skills</h1>
+          <h2>with Real Projects</h2>
+          <p>Learn from top trainers. 100% placement assistance.</p>
+          <button class="cta-button">Start Learning Now</button>
         </div>
-      </header>
-      <div class="body-container">
-        <section id="home" class="hero">
-          <div class="hero-text">
-            <h1 class="first-heading">Master Tech Skills</h1>
-            <h2>with Real Projects</h2>
-            <p>Learn from top trainers. 100% placement assistance.</p>
-            <button class="cta-button">Start Learning Now</button>
-          </div>
-          <div class="hero-image">
-            <img src="assets/image-2.png" alt="Illustration" />
-          </div>
-        </section>
+        <div class="hero-image">
+          <img src="assets/image-2.png" alt="Illustration" />
+        </div>
+      </section>
 
-        <!-- ────────────────────────────────────────────────────────────────────────────
+      <!-- ────────────────────────────────────────────────────────────────────────────
          Courses Section
          ──────────────────────────────────────────────────────────────────────────── -->
-        <section id="courses" class="courses">
-          <h2 class="section-heading">Our Courses</h2>
-          <div class="course-grid">
-            <!-- Course Card #1 -->
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/flutter.png" alt="Course 1" />
-              </div>
-              <div class="course-info">
-                <h3>Flutter Development</h3>
-                <p>Build cross-platform mobile apps with Google’s Flutter.</p>
-              </div>
+      <section id="courses" class="courses">
+        <h2 class="section-heading">Our Courses</h2>
+        <div class="course-grid">
+          <!-- Course Card #1 -->
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/flutter.png" alt="Course 1" />
             </div>
-
-            <!-- Course Card #2 -->
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/mern.png" alt="Course 2" />
-              </div>
-              <div class="course-info">
-                <h3>MERN Stack</h3>
-                <p>
-                  Learn MongoDB, Express.js, React, and Node in one complete
-                  package.
-                </p>
-              </div>
-            </div>
-
-            <!-- Course Card #3 -->
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/python.png" alt="Course 3" />
-              </div>
-              <div class="course-info">
-                <h3>Data Science</h3>
-                <p>Master Python, Pandas, and Machine Learning fundamentals.</p>
-              </div>
-            </div>
-
-            <!-- Course Card #4 -->
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/uiux.png" alt="Course 4" />
-              </div>
-              <div class="course-info">
-                <h3>UI/UX Design</h3>
-                <p>
-                  Create stunning, user-friendly interfaces with Figma and
-                  Sketch.
-                </p>
-              </div>
-            </div>
-
-            <!-- Course Card #5 -->
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/dm.png" alt="Course 5" />
-              </div>
-              <div class="course-info">
-                <h3>Digital Marketing</h3>
-                <p>
-                  SEO, Social Media, and Analytics to grow any business online.
-                </p>
-              </div>
-            </div>
-
-            <!-- Course Card #6 -->
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/java.png" alt="Course 6" />
-              </div>
-              <div class="course-info">
-                <h3>Java | J2EE Programming</h3>
-                <p>Java, world’s popular, platform-independent languages.</p>
-              </div>
-            </div>
-
-            <div class="course-card">
-              <div class="course-image">
-                <img src="assets/java.png" alt="Course 6" />
-              </div>
-              <div class="course-info">
-                <h3>Java | J2EE Programming</h3>
-                <p>Java, world’s popular, platform-independent languages.</p>
-              </div>
+            <div class="course-info">
+              <h3>Flutter Development</h3>
+              <p>Build cross-platform mobile apps with Google’s Flutter.</p>
             </div>
           </div>
-        </section>
 
-        <!-- Live Classes Section (add below “courses” and above footer) -->
-        <section id="live" class="live-classes">
-          <h2 class="section-heading">Upcoming Live Classes</h2>
-          <div class="live-grid">
-            <!-- Live Class Card #1 -->
-            <div class="live-card">
-              <div class="live-image">
-                <img src="assets/flutter.png" alt="Flutter Live Class" />
-              </div>
-              <div class="live-info">
-                <h3>Flutter Q&A Session</h3>
-                <p class="live-date">Tomorrow &bull; 6:00 PM IST</p>
-                <button class="live-button">Join Now</button>
-              </div>
+          <!-- Course Card #2 -->
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/mern.png" alt="Course 2" />
             </div>
-            <!-- Live Class Card #2 -->
-            <div class="live-card">
-              <div class="live-image">
-                <img src="assets/mern.png" alt="MERN Live Class" />
-              </div>
-              <div class="live-info">
-                <h3>MERN Stack Workshop</h3>
-                <p class="live-date">Tomorrow &bull; 7:30 PM IST</p>
-                <button class="live-button">Join Now</button>
-              </div>
+            <div class="course-info">
+              <h3>MERN Stack</h3>
+              <p>
+                Learn MongoDB, Express.js, React, and Node in one complete
+                package.
+              </p>
             </div>
-            <!-- Live Class Card #3 -->
-            <div class="live-card">
-              <div class="live-image">
-                <img src="assets/dm.png" alt="Data Science Live Class" />
-              </div>
-              <div class="live-info">
-                <h3>Data Science AMA</h3>
-                <p class="live-date">Tomorrow &bull; 5:00 PM IST</p>
-                <button class="live-button">Join Now</button>
-              </div>
-            </div>
-            <!-- Live Class Card #4 -->
-            <div class="live-card">
-              <div class="live-image">
-                <img src="assets/uiux.png" alt="UI/UX Live Class" />
-              </div>
-              <div class="live-info">
-                <h3>UI/UX Design Live</h3>
-                <p class="live-date">Tomorrow &bull; 8:00 PM IST</p>
-                <button class="live-button">Join Now</button>
-              </div>
-            </div>
+          </div>
 
-            <div class="live-card">
-              <div class="live-image">
-                <img src="assets/uiux.png" alt="UI/UX Live Class" />
-              </div>
-              <div class="live-info">
-                <h3>UI/UX Design Live</h3>
-                <p class="live-date">Tomorrow &bull; 8:00 PM IST</p>
-                <button class="live-button">Join Now</button>
-              </div>
+          <!-- Course Card #3 -->
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/python.png" alt="Course 3" />
+            </div>
+            <div class="course-info">
+              <h3>Data Science</h3>
+              <p>Master Python, Pandas, and Machine Learning fundamentals.</p>
             </div>
           </div>
-        </section>
-      </div>
-      <footer>
-        <div class="footer-container">
-          <div>
-            <h4>Company</h4>
-            <p>About Us</p>
-            <p>Services</p>
+
+          <!-- Course Card #4 -->
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/uiux.png" alt="Course 4" />
+            </div>
+            <div class="course-info">
+              <h3>UI/UX Design</h3>
+              <p>
+                Create stunning, user-friendly interfaces with Figma and
+                Sketch.
+              </p>
+            </div>
           </div>
-          <div>
-            <h4>Courses</h4>
-            <p>Flutter</p>
-            <p>MERN Stack</p>
+
+          <!-- Course Card #5 -->
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/dm.png" alt="Course 5" />
+            </div>
+            <div class="course-info">
+              <h3>Digital Marketing</h3>
+              <p>
+                SEO, Social Media, and Analytics to grow any business online.
+              </p>
+            </div>
           </div>
-          <div>
-            <h4>Contact Us</h4>
-            <p>info@hoxinfotech.com</p>
-            <p>+91 9447414535</p>
+
+          <!-- Course Card #6 -->
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/java.png" alt="Course 6" />
+            </div>
+            <div class="course-info">
+              <h3>Java | J2EE Programming</h3>
+              <p>Java, world’s popular, platform-independent languages.</p>
+            </div>
           </div>
-          <div>
-            <h4>Social Media</h4>
-            <p>Twitter | Facebook | LinkedIn</p>
+
+          <div class="course-card">
+            <div class="course-image">
+              <img src="assets/java.png" alt="Course 6" />
+            </div>
+            <div class="course-info">
+              <h3>Java | J2EE Programming</h3>
+              <p>Java, world’s popular, platform-independent languages.</p>
+            </div>
           </div>
-      </footer>
+        </div>
+      </section>
+
+      <!-- Live Classes Section (add below “courses” and above footer) -->
+      <section id="live" class="live-classes">
+        <h2 class="section-heading">Upcoming Live Classes</h2>
+        <div class="live-grid">
+          <!-- Live Class Card #1 -->
+          <div class="live-card">
+            <div class="live-image">
+              <img src="assets/flutter.png" alt="Flutter Live Class" />
+            </div>
+            <div class="live-info">
+              <h3>Flutter Q&A Session</h3>
+              <p class="live-date">Tomorrow &bull; 6:00 PM IST</p>
+              <button class="live-button">Join Now</button>
+            </div>
+          </div>
+          <!-- Live Class Card #2 -->
+          <div class="live-card">
+            <div class="live-image">
+              <img src="assets/mern.png" alt="MERN Live Class" />
+            </div>
+            <div class="live-info">
+              <h3>MERN Stack Workshop</h3>
+              <p class="live-date">Tomorrow &bull; 7:30 PM IST</p>
+              <button class="live-button">Join Now</button>
+            </div>
+          </div>
+          <!-- Live Class Card #3 -->
+          <div class="live-card">
+            <div class="live-image">
+              <img src="assets/dm.png" alt="Data Science Live Class" />
+            </div>
+            <div class="live-info">
+              <h3>Data Science AMA</h3>
+              <p class="live-date">Tomorrow &bull; 5:00 PM IST</p>
+              <button class="live-button">Join Now</button>
+            </div>
+          </div>
+          <!-- Live Class Card #4 -->
+          <div class="live-card">
+            <div class="live-image">
+              <img src="assets/uiux.png" alt="UI/UX Live Class" />
+            </div>
+            <div class="live-info">
+              <h3>UI/UX Design Live</h3>
+              <p class="live-date">Tomorrow &bull; 8:00 PM IST</p>
+              <button class="live-button">Join Now</button>
+            </div>
+          </div>
+
+          <div class="live-card">
+            <div class="live-image">
+              <img src="assets/uiux.png" alt="UI/UX Live Class" />
+            </div>
+            <div class="live-info">
+              <h3>UI/UX Design Live</h3>
+              <p class="live-date">Tomorrow &bull; 8:00 PM IST</p>
+              <button class="live-button">Join Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <br>
+    <br>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <h2 class="section-heading">Real-World Projects</h2>
+      <div class="project-grid">
+        <!-- Project Card #1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/course.png" alt="Project 1" />
+          </div>
+          <div class="project-info">
+            <h3>Online Course Platform</h3>
+            <p>A full-stack platform built using MERN and Flutter for mobile access.</p>
+          </div>
+        </div>
+
+        <!-- Project Card #2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/dashboard.png" alt="Project 2" />
+          </div>
+          <div class="project-info">
+            <h3>Data Dashboard</h3>
+            <p>Interactive dashboard for analytics using Python, Pandas, and Plotly.</p>
+          </div>
+        </div>
+
+        <!-- Project Card #3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/ecommerce.png" alt="Project 3" />
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce App</h3>
+            <p>Cross-platform shopping app with payment gateway integration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <!-- ────────────────────────────────────────────────────────────────────────────
+         Services Section
+         ──────────────────────────────────────────────────────────────────────────── -->
+    <section id="services" class="services">
+      <h2 class="section-heading">Our Services</h2>
+      <div class="services-grid">
+        <!-- Service #1 -->
+        <div class="service-card">
+          <img src="assets/course.png" alt="Web Development" />
+          <h3>Web Development</h3>
+          <p>Custom, responsive websites using the latest technologies like React, Vue, and more.</p>
+        </div>
+
+        <!-- Service #2 -->
+        <div class="service-card">
+          <img src="assets/dashboard.png" alt="Mobile App Development" />
+          <h3>Mobile App Development</h3>
+          <p>Cross-platform mobile apps using Flutter or React Native tailored for your business.</p>
+        </div>
+
+        <!-- Service #3 -->
+        <div class="service-card">
+          <img src="assets/uiux.png" alt="UI/UX Design" />
+          <h3>UI/UX Design</h3>
+          <p>Crafting intuitive and engaging user experiences with modern design tools like Figma.</p>
+        </div>
+
+        <!-- Service #4 -->
+        <div class="service-card">
+          <img src="assets/digmark.png" alt="Digital Marketing" />
+          <h3>Digital Marketing</h3>
+          <p>Improve online visibility with SEO, social media campaigns, and performance tracking.</p>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2 class="section-heading">About Hox Infotech</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <h3>Empowering Innovation, Enabling Excellence</h3>
+          <p>Founded with a vision to transform technology education and software development, <strong>Hox
+              Infotech</strong>
+            stands at the forefront of innovation. We specialize in delivering cutting-edge solutions across Web
+            Development, AI & Machine Learning, EdTech platforms, and Mobile App Development, alongside providing
+            premier
+            industry-ready training programs.</p>
+
+          <p>Our multidisciplinary team of experts brings real-world experience to education, empowering individuals and
+            businesses to achieve excellence through technology. We believe in blending technical rigor with creativity
+            to
+            drive impactful digital transformation.</p>
+
+          <h3>Our Mission</h3>
+          <p>To inspire and nurture talent by providing industry-relevant learning experiences and delivering
+            world-class
+            technology solutions that drive business growth and societal progress.</p>
+
+          <h3>Our Values</h3>
+          <ul>
+            <li><strong>Innovation:</strong> Embracing creativity and continuous improvement.</li>
+            <li><strong>Integrity:</strong> Upholding transparency and ethical practices.</li>
+            <li><strong>Excellence:</strong> Delivering top-notch solutions and training programs.</li>
+            <li><strong>Impact:</strong> Creating measurable value for students and businesses alike.</li>
+          </ul>
+
+          <h3>Why Partner With Us?</h3>
+          <ul>
+            <li>Certified Trainers and Industry Experts</li>
+            <li>Project-Centric Learning Modules</li>
+            <li>Customized Software Solutions</li>
+            <li>Global Clientele and Proven Track Record</li>
+            <li>Placement Assistance and Career Development</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="assets/about.png" alt="About Hox Infotech" />
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+
+    <footer>
+      <div class="footer-container">
+        <div>
+          <h4>Company</h4>
+          <a href="#about">About Us</a><br />
+          <a href="#services">Services</a>
+        </div>
+        <div>
+          <h4>Courses</h4>
+          <a href="#courses">Flutter</a><br />
+          <a href="#courses">MERN Stack</a>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <a href="mailto:info@hoxinfotech.com">info@hoxinfotech.com</a><br />
+          <a href="tel:+919447414535">+91 9995550353</a>
+        </div>
+        <div>
+          <h4>Social Media</h4>
+          <a href="https://twitter.com/" target="_blank">Twitter</a> |
+          <a href="https://facebook.com/" target="_blank">Facebook</a> |
+          <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
