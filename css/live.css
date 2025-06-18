@@ -1,115 +1,135 @@
-/* Grid container for live class cards */
+/* Live Classes Grid - Single Row on Web */
 .live-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  /* reduced gap for tighter grid */
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  /* Prevent wrapping on desktop */
+  overflow-x: auto;
+  /* Enable horizontal scroll if overflow */
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+  max-width: 100%;
+  scroll-behavior: smooth;
 }
 
-/* Each live class card */
+/* Optional scroll customization (webkit browsers) */
+.live-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.live-grid::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
+
+/* Premium Live Class Card */
 .live-card {
-  background-color: var(--color-bg);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  /* Smaller boxes */
-  width: calc(20% - 1rem);
-  /* 5 cards per row on large screens */
-  min-width: 200px;
-  max-width: 240px;
+  width: 260px;
+  flex: 0 0 auto;
+  /* Prevent shrinking or wrapping */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatUpFade 0.6s ease forwards;
+  transform: translateY(20px);
+  opacity: 0;
 }
 
-/* Image container (35% of card height) */
+.live-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
 .live-image {
-  flex: 0 0 35%;
-  overflow: hidden;
+  height: 150px;
+  position: relative;
+  background: linear-gradient(to bottom right, #e0e7ff, #f3f4f6);
 }
 
 .live-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* Info area (65% of card) */
+.live-card:hover .live-image img {
+  transform: scale(1.05);
+}
+
+/* Info */
 .live-info {
-  flex: 1;
-  padding: 0.8rem;
-  /* slightly reduced padding */
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background-color: var(--color-bg);
+  background: transparent;
 }
 
 .live-info h3 {
-  font-size: 1rem;
-  /* slightly smaller text */
-  color: var(--color-text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.4px;
 }
 
 .live-info .live-date {
-  font-size: 0.8rem;
-  color: var(--color-text-light);
-  margin-bottom: 0.8rem;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
 }
 
+/* Join Button */
 .live-button {
-  background-color: var(--color-primary);
-  color: var(--color-button-text);
-  padding: 0.5rem 0.8rem;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   border: none;
-  border-radius: 6px;
-  font-family: "Poppins", sans-serif;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-self: flex-start;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .live-button:hover {
-  background-color: var(--color-primary-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
 }
 
-/* Hover effect on card */
-.live-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/*=========================================================================== 
-   Responsive Breakpoints
-=============================================================================*/
-
-/* Small laptops (≤1280px): four cards per row */
-@media (max-width: 1280px) {
-  .live-card {
-    width: calc(25% - 1rem);
+/* Animation */
+@keyframes floatUpFade {
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* Tablets (≤1024px): three cards per row */
+/* Responsive: Wrap Cards on Tablets and Below */
 @media (max-width: 1024px) {
+  .live-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .live-card {
-    width: calc(33.333% - 1rem);
+    width: 45%;
+    margin-bottom: 1.5rem;
   }
 }
 
-/* Phones & small tablets (≤768px): two cards per row */
 @media (max-width: 768px) {
   .live-card {
-    width: calc(50% - 1rem);
-  }
-}
-
-/* Very small devices (≤480px): one card per row */
-@media (max-width: 480px) {
-  .live-card {
     width: 100%;
-    max-width: none;
   }
 }

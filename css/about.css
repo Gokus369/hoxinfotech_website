@@ -59,3 +59,44 @@
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
+/* 📱 Premium Mobile View */
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 15px;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-text h3 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #444;
+    }
+
+    .about-text ul li {
+        font-size: 16px;
+        color: #222;
+        padding-left: 20px;
+    }
+
+    .about-text ul li::before {
+        font-size: 14px;
+        top: 2px;
+    }
+
+    .about-image img {
+        max-width: 90%;
+        border-radius: 16px;
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+    }
+}

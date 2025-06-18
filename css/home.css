@@ -1,5 +1,5 @@
 /* ===================================================================
-   Hero Section Styles (with Radial Reveal)
+   Hero Section Styles (with Fallback Radial Reveal)
    =================================================================== */
 
 .hero {
@@ -8,25 +8,28 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem 2rem;
-  overflow: hidden; /* ensure clipped areas do not bleed */
+  overflow: hidden;
 }
 
-/* Text side (no change) */
+/* Text side */
 .hero-text {
   flex: 1;
   max-width: 50%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .hero-text h1 {
   font-size: 4.5rem;
   color: var(--color-text);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero-text h2 {
   font-size: 2.75rem;
   color: var(--color-text);
   margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .hero-text p,
@@ -34,170 +37,99 @@
   margin-bottom: 1rem;
 }
 
-/* Image side: set up for radial clip‐path reveal */
+/* Image side with fallback for no JS */
 .hero-image {
   flex: 1;
   max-width: 50%;
   overflow: hidden;
-  /* ensure we can animate the clip‐path center point */
+  text-align: center;
 }
 
-/* Base state: fully clipped to a 0% circle at center, invisible */
 .hero-image img {
   width: 100%;
   height: auto;
   display: block;
-  clip-path: circle(0% at 50% 50%);
-  opacity: 0;
+  opacity: 1;
+  clip-path: circle(150% at 50% 50%);
   transition: clip-path 1s ease-out, opacity 1s ease-out;
 }
 
-/* When .in-view is added, expand the circle to cover the entire image */
-.hero-image.in-view img {
+/* JS-enabled animation */
+body.js-enabled .hero-image img {
+  opacity: 0;
+  clip-path: circle(0% at 50% 50%);
+}
+
+body.js-enabled .hero-image.in-view img {
   clip-path: circle(150% at 50% 50%);
   opacity: 1;
 }
 
 /* ===================================================================
-   Course Section Styles (unchanged for context)
-   =================================================================== */
+       Responsive Hero Section
+     =================================================================== */
 
-/* Wrapper for the entire section */
-.courses {
-  margin: 3rem 0;
-}
-
-.section-heading {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--color-text);
-}
-
-.course-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.course-card {
-  background-color: var(--color-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  width: calc(23% - 1rem);
-  min-width: 250px;
-  max-width: 350px;
-  height: 350px;
-  opacity: 0;
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.course-card.from-left {
-  transform: translateX(-100px);
-}
-.course-card.from-right {
-  transform: translateX(100px);
-}
-.course-card.from-top {
-  transform: translateY(-100px);
-}
-.course-card.from-bottom {
-  transform: translateY(100px);
-}
-
-.course-card.in-view {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.course-image {
-  flex: 0 0 70%;
-  overflow: hidden;
-}
-
-.course-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.course-info {
-  flex: 1;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-color: var(--color-bg);
-}
-
-.course-info h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.course-info p {
-  font-size: 0.9rem;
-  color: var(--color-text-light);
-  margin: 0;
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Tablets & small laptops (≤1024px): still side-by-side but adjust padding and gap */
 @media (max-width: 1024px) {
   .hero {
     padding: 3rem 1.5rem;
     gap: 1.5rem;
-    margin-top: 6rem; /* space for fixed header */
+    margin-top: 6rem;
   }
+
   .hero-text h1 {
     font-size: 3.5rem;
   }
+
   .hero-text h2 {
     font-size: 2.25rem;
   }
 }
 
-/* Phones (≤768px): stack vertically */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-    margin-top: 8rem; /* space for fixed header */
+    padding: 2.5rem 1.25rem;
+    gap: 2rem;
+    margin-top: 7rem;
+    text-align: center;
   }
-  .hero-text,
+
+  .hero-text {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text .cta-button {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
   .hero-image {
     max-width: 100%;
   }
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-  .hero-text h2 {
-    font-size: 1.75rem;
-  }
-}
 
-/* @media (max-width: 1024px) {
-  .course-card {
-    width: calc(50% - 1rem);
-  }
-  .hero {
-    margin-top: 6rem;
-  }
-}
-@media (max-width: 768px) {
-  .course-card {
-    width: 100%;
-    max-width: none;
-  }
-} */
+  .hero-image img {
+    width: 90%;
+    margin: 0 auto;
+  } }

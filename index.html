@@ -22,14 +22,6 @@
     <header>
       <div class="nav-container">
         <div class="logo"><span class="highlight">H</span>ox Infotech</div>
-
-        <!-- Hamburger button -->
-        <button class="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
         <nav id="navbar">
           <a href="#home">Home</a>
           <a href="#courses">Courses</a>
@@ -39,7 +31,16 @@
           <a href="#about">About</a>
         </nav>
 
-        <button class="cta-button">Join Now</button>
+
+        <div class="nav-right">
+          <button class="cta-button">Join Now</button>
+          <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
       </div>
     </header>
     <div class="body-container">
@@ -127,13 +128,14 @@
           <!-- Course Card #6 -->
           <div class="course-card">
             <div class="course-image">
-              <img src="assets/java.png" alt="Course 6" />
+              <img src="assets/python.png" alt="Python Course" />
             </div>
             <div class="course-info">
-              <h3>Java | J2EE Programming</h3>
-              <p>Java, world’s popular, platform-independent languages.</p>
+              <h3>Python Programming</h3>
+              <p>Master Python, the world's most beginner-friendly programming language.</p>
             </div>
           </div>
+
 
           <div class="course-card">
             <div class="course-image">
@@ -187,14 +189,14 @@
           <!-- Live Class Card #4 -->
           <div class="live-card">
             <div class="live-image">
-              <img src="assets/uiux.png" alt="UI/UX Live Class" />
+              <img src="assets/blockchain.png" alt="Blockchain Live Class" />
             </div>
             <div class="live-info">
-              <h3>UI/UX Design Live</h3>
-              <p class="live-date">Tomorrow &bull; 8:00 PM IST</p>
+              <h3>Blockchain Fundamentals Live</h3>
               <button class="live-button">Join Now</button>
             </div>
           </div>
+
 
           <div class="live-card">
             <div class="live-image">
@@ -363,7 +365,27 @@
     </footer>
 
   </div>
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navbar = document.getElementById("navbar");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("open");
+      navbar.classList.toggle("open");
+    });
+
+    // Optional: close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
+        navbar.classList.remove("open");
+        hamburger.classList.remove("open");
+      }
+    });
+  });
+</script>
+
 
 </html>

@@ -2,37 +2,28 @@
   Optimized Two-Theme CSS for Hox Infotech (excluding navbar/header) 
 =============================================================================*/
 
-/* 1. Color Variables 
-   • Light theme under :root 
-   • Override when .dark-theme on <body> 
-=============================================================================*/
+/* 1. Color Variables */
 :root {
-  /* Primary brand */
   --color-primary: #0077cc;
   --color-primary-hover: #005fa3;
 
-  /* Text & backgrounds */
   --color-bg: #ffffff;
   --color-bg-contrast: #f9f9f9;
   --color-text: #333333;
   --color-text-light: #666666;
   --color-text-inverse: #ffffff;
 
-  /* Header & Footer (note: header-border used for navbar border) */
   --color-header-border: #e1e1e1;
   --color-footer-bg: #f1f1f1;
   --color-footer-text: #333333;
 
-  /* Navigation (links only) */
   --color-nav-link: #333333;
   --color-nav-link-hover: #0077cc;
 
-  /* Button */
   --color-button-bg: #0077cc;
   --color-button-bg-hover: #005fa3;
   --color-button-text: #ffffff;
 
-  /* Borders/Dividers */
   --color-border: #dddddd;
 }
 
@@ -62,7 +53,6 @@ body.dark-theme {
 
 /*=========================================================================== 
   2. Global Resets & Base Styles 
-   • Apply gradient background to <body> 
 =============================================================================*/
 *,
 *::before,
@@ -74,72 +64,63 @@ body.dark-theme {
 
 html,
 body {
-  height: 100%; /* let <body> expand beyond one screen */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  /* ✅ Prevent horizontal scroll */
+  scroll-behavior: smooth;
+  font-family: "Poppins", "Open Sans", sans-serif;
+
 }
 
 html {
-  font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top left, #55aaff, transparent 60%),
     radial-gradient(circle at top right, #a3d1ff, transparent 60%),
     linear-gradient(to bottom, #a3d1ff, #e6f3ff) no-repeat center center;
-  background-size: cover; /* stretch to fill entire body */
-  background-attachment: fixed; /* keeps gradient “locked” as you scroll */
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
   scroll-behavior: smooth;
-  padding: 5rem 5rem 0;
+
 }
 
-/* BODY: dark gradient from top-right → bottom-left */
-body {
-  height: 100%;
-  font-family: "Poppins", "Open Sans", sans-serif;
-  scroll-behavior: smooth;
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
 }
 
-/* Utility anchors & lists */
+/* Typography & Lists */
 a {
   text-decoration: none;
   color: inherit;
 }
+
 ul {
   list-style: none;
-}
-img {
-  max-width: 100%;
-  display: block;
 }
 
 /*=========================================================================== 
   3. Content Container 
-   • Add top padding so content doesn’t hide under fixed header 
 =============================================================================*/
 .body-container {
   min-height: calc(100vh - 160px);
-  /* background-color: var(--color-bg-contrast); */
+  padding: 0 1rem;
 }
 
-/* ────────────────────────────────────────────────────────────────────────────
-   1) When a section gets scrolled completely out of view (upwards),
-      we add .hidden-section to collapse it.
-   ──────────────────────────────────────────────────────────────────────────── */
-/* 1) Fade‐out a section once it’s fully scrolled above the viewport */
+/* Section Visibility Transition */
 section {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
 section.hidden-section {
   opacity: 0;
   visibility: hidden;
 }
 
-/* 2) Active link styling (if not already present) */
-nav#navbar a.active {
-  background-color: var(--color-primary);
-  color: var(--color-button-text);
-}
-
-/* ────────────────────────────────────────────────────────────────────────────
-     2) Highlight the “active” nav link—this may already exist in navbar.css,
-        but just in case:
-     ──────────────────────────────────────────────────────────────────────────── */
+/* Active Nav Link Styling (in case not already in navbar.css) */
 nav#navbar a.active {
   background-color: var(--color-primary);
   color: var(--color-button-text);
@@ -150,31 +131,72 @@ nav#navbar a.active {
 =============================================================================*/
 footer {
   margin-top: auto;
+  width: 100%;
+  background-color: var(--color-footer-bg);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-container {
-  /* max-width: 1200px; */
-  display: flex;
-  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 2rem;
-  justify-content: space-between;
-  background-color: var(--color-footer-bg);
+  max-width: 1200px;
+  margin: 0 auto;
   color: var(--color-footer-text);
 }
 
 .footer-container h4 {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   font-weight: 600;
+  color: var(--color-primary);
 }
-.footer-container p {
+
+.footer-container a {
   font-size: 0.95rem;
-  margin: 0.25rem 0;
   color: var(--color-footer-text);
+  transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.footer-container p {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-container div {
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .footer-container div:last-child {
+    border-bottom: none;
+  }
+
+  .footer-container h4 {
+    font-size: 1.2rem;
+  }
+
+  .footer-container a,
+  .footer-container p {
+    font-size: 1rem;
+  }
 }
 
 /*=========================================================================== 
-  5. Utility Classes & Responsive Adjustments 
+  5. Utility Classes & Responsive Fixes 
 =============================================================================*/
 .text-center {
   text-align: center;
@@ -184,5 +206,13 @@ footer {
   .footer-container {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  html {
+    padding: 0;
+  }
+
+  .body-container {
+    padding: 0 1rem;
   }
 }

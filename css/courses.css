@@ -1,141 +1,142 @@
 /* ────────────────────────────────────────────────────────────────────────────
    Courses Section Styles
-   ──────────────────────────────────────────────────────────────────────────── */
+────────────────────────────────────────────────────────────────────────────── */
 
-/* 1. Wrapper for the entire section */
 .courses {
-  /* padding: 4rem 2rem; */
-  /* background-color: var(--color-bg-contrast); optional background */
   margin: 3rem 0;
+  padding: 0 2rem;
 }
 
-/* ────────────────────────────────────────────────────────────────────────────
-   Course Card Scroll-In Animations
-   ──────────────────────────────────────────────────────────────────────────── */
+/* Section Heading */
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
+  text-align: center;
+}
 
-/* Base: make cards invisible/off-position by default */
+/* Grid container */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Course Card */
 .course-card {
-  opacity: 0;
-  transform: none; /* will be overridden by “from-*” classes */
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  opacity: 1;
+  transform: none;
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
-/* Initial off-screen positions: */
-.course-card.from-left {
+/* Scroll Animations - only visible if JS adds .js-enabled to body */
+body.js-enabled .course-card {
+  opacity: 0;
+  transform: none;
+}
+
+body.js-enabled .course-card.from-left {
   transform: translateX(-100px);
 }
 
-.course-card.from-right {
+body.js-enabled .course-card.from-right {
   transform: translateX(100px);
 }
 
-.course-card.from-top {
+body.js-enabled .course-card.from-top {
   transform: translateY(-100px);
 }
 
-.course-card.from-bottom {
+body.js-enabled .course-card.from-bottom {
   transform: translateY(100px);
 }
 
-/* Once in view, reset transform & fade in */
-.course-card.in-view {
+body.js-enabled .course-card.in-view {
   opacity: 1;
   transform: translateX(0) translateY(0);
-}
-
-/* Optional: stagger a bit if many cards load at once */
-.course-card.in-view {
   transition-delay: 0.1s;
 }
 
-/* Section heading (optional) */
-.section-heading {
-  /* text-align: center; */
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--color-text);
-}
-
-/* 2. Grid container for cards */
-.course-grid {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: space-evenly;
-}
-
-/* 3. Each course card */
-.course-card {
-  background-color: var(--color-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  width: calc(23% - 1rem); /* three columns with gap */
-  min-width: 250px; /* ensures it never gets too narrow */
-  max-width: 350px; /* optional cap on card width */
-  height: 350px; /* fixed height for consistency */
-}
-
-/* 4. Image container: 70% of card’s height */
+/* Image container */
 .course-image {
-  flex: 0 0 70%; /* occupies 70% of the .course-card height */
+  flex: 0 0 auto;
+  height: 200px;
   overflow: hidden;
-  padding: 0.5rem; /* no padding */
 }
 
-/* Ensure the <img> fills its container and maintains aspect ratio */
 .course-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* crop or scale so it covers entire area */
-  display: block;
+  object-fit: contain;
 }
 
-/* 5. Info area: remaining 30% */
+/* Info area */
 .course-info {
-  flex: 1; /* fills the leftover 30% of height */
+  flex: 1;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: var(--color-bg);
+  background-color: #fff;
 }
 
 .course-info h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--color-text);
+  color: #111;
 }
 
 .course-info p {
-  font-size: 0.9rem;
-  color: var(--color-text-light);
+  font-size: 0.95rem;
+  color: #555;
   margin: 0;
 }
 
-/* 6. Hover effect (optional) */
+/* Hover effect */
 .course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* 7. Responsive breakpoints */
+/* ────────────────────────────────────────────────────────────────────────────
+   Responsive Breakpoints
+────────────────────────────────────────────────────────────────────────────── */
 
-/* Two columns on tablets (≤1024px) */
+/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
-  .course-card {
-    width: calc(50% - 1rem);
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
-/* Single column on mobile phones (≤768px) */
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
-  .course-card {
-    width: 100%;
-    /* remove max-width so it fills the container */
-    max-width: none;
+  .courses {
+    padding: 0 1rem;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .course-image {
+    height: 160px;
+  }
+
+  .course-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .course-info p {
+    font-size: 0.88rem;
   }
 }
